@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+			<script>(function(){window._rgba_tags_xpr = false;function enqueueScripts(){if (!window._rgba_tags){window._rgba_tags = [];}};document.addEventListener("split-testing/ready", enqueueScripts);document.addEventListener("split-testing/error", enqueueScripts);document.addEventListener("split-testing/after-experiment", function(){window._rgba_tags_xpr = true;/* Detect when ringba tag array is available */const timeout = 20000;let seconds = 0;let time = setInterval(function(){seconds += 500;if (window._rgba_tags){/* xpr tag */window._rgba_tags.push({type: "User",xpr: "yes"});window._rgba_tags_xpr = false;}if ((seconds >= timeout) || (undefined !== window._rgba_tags) || Array.isArray(window._rgba_tags)) {clearInterval(time);time = null;}}, 500);});})();</script><script type="text/javascript" src="split-testing.js"></script><script>document.addEventListener("DOMContentLoaded", function(){const oForm = document.createElement("form");oForm.setAttribute("id", "trustedform-ref");oForm.setAttribute("style", "position:absolute!important;left:0!important;top:0!important;bottom:0!important;right:0!important;width:100%!important;height:100%!important;opacity:0!important;visibility:hidden!important;z-index:999999!important;");document.body.appendChild(oForm);window.trustedFormCertUrlCallback = function(certificateUrl){try {/*const oURL = new URL(certificateUrl);const sCert = oURL.pathname.replace(/^\/+/, "");*/if (!window._rgba_tags){window._rgba_tags = [];}window._rgba_tags.push({type: "User",xxTrustedFormCertUrl: certificateUrl});/*console.log(">> Trusted form cert: " + certificateUrl);*/}catch(e){}};/* Trusted Form */var tf = document.createElement('script');tf.type = 'text/javascript';tf.async = true;tf.src = ("https:" == document.location.protocol ? 'https' : 'http') +'://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&use_tagged_consent=true&l=' +new Date().getTime() + Math.random();var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);});</script>
+        <title>Assisted Benefits</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=EmulateIE9, IE=EDGE" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="css2" rel="stylesheet">
+
+        <!-- Style -->
+        <link href="./css/style.css" rel="stylesheet" media="all">
+
+        <!-- Scripts -->
+        <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+        </head>
+    <body>
+        <div id="app" class="app">
+            <div class="header">
+                <div class="container">
+                    <img class="banner" src="./img/banner.jpg" />
+                </div>
+            </div>
+
+            <div class="section burial-section">
+                <div class="container">
+                    <div class="title">Check Eligibility for a</div>
+                    <div class="title-lg">
+                        <div>
+                            <span class="background"></span>
+                            <span>$40,000</span>
+                        </div>
+                        <br/>
+                        Burial Plan
+                    </div>
+                </div>
+            </div>
+
+            <div class="section steps-section">
+                <div class="container">
+                    <div class="step">
+                        <div class="question-title">Select Your Age Range</div>
+                        <div class="question-options">
+                            <a href="./congratulation.php" class="option add-url-params add-value-on-click" data-field-name="Age" data-field-value="50"><span>50-75</span></a>
+                            <a href="./congratulation.php" class="option add-url-params add-value-on-click" data-field-name="Age" data-field-value="76"><span>76-80</span></a>
+                            <a href="./congratulation.php" class="option add-url-params add-value-on-click" data-field-name="Age" data-field-value="81"><span>81+</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="container">
+                    <div class="menu">
+                        <a href="./privacy.html">Privacy</a>
+                        <span class="separator"></span>
+                        <a href="./terms.html">Terms</a>
+                    </div>
+                    <div class="copyright">
+                        Copyright © 2026 - All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            (function(){
+                let oParams = new URLSearchParams(window.location.search);
+                let sParams = oParams.toString();
+
+                if ((sParams != null) && (typeof sParams == "string") && ((sParams = sParams.trim()) != "")){
+                    $(".add-url-params").each(function(){
+                        let oElement = $(this);
+                        let sHref = oElement.attr("href");
+                        if ((sHref != null) && (typeof sHref == "string") && ((sHref = sHref.trim()) != "")){
+                            oElement.attr("href", sHref + (sHref.includes("?") ? "&" : "?") + sParams);
+                        }
+                    });
+                }
+
+                $(".add-value-on-click").each(function(){
+                    let oField = $(this);
+                    let sHref = oField.attr("href");
+                    let sFieldName = oField.data("field-name");
+                    let sFieldValue = oField.data("field-value");
+
+                    if (
+                       (sHref != null) && (typeof sHref == "string") && ((sHref = sHref.trim()) != "") && 
+                       (sFieldName != null) && (typeof sFieldName == "string") && ((sFieldName = sFieldName.trim()) != "") && 
+                       (sFieldValue != null) && (((typeof sFieldValue == "string") && ((sFieldValue = sFieldValue.trim()) != "")) || (typeof sFieldValue == "number"))
+                    ) {
+                        oField.attr("href", "#");
+
+                        oField.on("click", function(ev){
+                            window.location.replace(sHref + (sHref.includes("?") ? "&" : "?") + sFieldName + "=" + sFieldValue);
+                            ev.preventDefault();
+                        });
+                    }
+                });
+            })();
+        </script>
+    </body>
+</html>
