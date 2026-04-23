@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-			<script>(function(){window._rgba_tags_xpr = false;function enqueueScripts(){if (!window._rgba_tags){window._rgba_tags = [];}};document.addEventListener("split-testing/ready", enqueueScripts);document.addEventListener("split-testing/error", enqueueScripts);document.addEventListener("split-testing/after-experiment", function(){window._rgba_tags_xpr = true;/* Detect when ringba tag array is available */const timeout = 20000;let seconds = 0;let time = setInterval(function(){seconds += 500;if (window._rgba_tags){/* xpr tag */window._rgba_tags.push({type: "User",xpr: "yes"});window._rgba_tags_xpr = false;}if ((seconds >= timeout) || (undefined !== window._rgba_tags) || Array.isArray(window._rgba_tags)) {clearInterval(time);time = null;}}, 500);});})();</script><script type="text/javascript" src="split-testing.js"></script><script>document.addEventListener("DOMContentLoaded", function(){const oForm = document.createElement("form");oForm.setAttribute("id", "trustedform-ref");oForm.setAttribute("style", "position:absolute!important;left:0!important;top:0!important;bottom:0!important;right:0!important;width:100%!important;height:100%!important;opacity:0!important;visibility:hidden!important;z-index:999999!important;");document.body.appendChild(oForm);window.trustedFormCertUrlCallback = function(certificateUrl){try {/*const oURL = new URL(certificateUrl);const sCert = oURL.pathname.replace(/^\/+/, "");*/if (!window._rgba_tags){window._rgba_tags = [];}window._rgba_tags.push({type: "User",xxTrustedFormCertUrl: certificateUrl});/*console.log(">> Trusted form cert: " + certificateUrl);*/}catch(e){}};/* Trusted Form */var tf = document.createElement('script');tf.type = 'text/javascript';tf.async = true;tf.src = ("https:" == document.location.protocol ? 'https' : 'http') +'://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&use_tagged_consent=true&l=' +new Date().getTime() + Math.random();var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);});</script>
+	
         <title>Assisted Benefits</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=EmulateIE9, IE=EDGE" />
@@ -17,7 +17,7 @@
         <link href="./style.css" rel="stylesheet" media="all">
 
         <!-- Scripts -->
-        <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="./jquery-3.6.0.min.js"></script>
         </head>
     <body>
         <div id="app" class="app">
@@ -26,48 +26,120 @@
                     <img class="banner" src="./banner.jpg" />
                 </div>
             </div>
-
-            <div class="section burial-section">
-                <div class="container">
-                    <div class="title">Check Eligibility for a</div>
-                    <div class="title-lg">
-                        <div>
-                            <span class="background"></span>
-                            <span>$40,000</span>
-                        </div>
-                        <br/>
-                        Burial Plan
-                    </div>
-                </div>
-            </div>
-
-            <div class="section steps-section">
-                <div class="container">
-                    <div class="step">
-                        <div class="question-title">Select Your Age Range</div>
-                        <div class="question-options">
-                            <a href="./congratulation.php" class="option add-url-params add-value-on-click" data-field-name="Age" data-field-value="50"><span>50-75</span></a>
-                            <a href="./congratulation.php" class="option add-url-params add-value-on-click" data-field-name="Age" data-field-value="76"><span>76-80</span></a>
-                            <a href="./congratulation.php" class="option add-url-params add-value-on-click" data-field-name="Age" data-field-value="81"><span>81+</span></a>
+                <div class="section initial-flow burial-section">
+                    <div class="container">
+                        <div class="title">Check Eligibility for a</div>
+                        <div class="title-lg">
+                            <div>
+                                <span class="background"></span>
+                                <span>$40,000</span>
+                            </div>
+                            <br/>
+                            Burial Plan
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="footer">
-                <div class="container">
-                    <div class="menu">
-                        <a href="./privacy.html">Privacy</a>
-                        <span class="separator"></span>
-                        <a href="./terms.html">Terms</a>
-                    </div>
-                    <div class="copyright">
-                        Copyright © 2026 - All rights reserved.
+                <div id="selection-section" class="section initial-flow steps-section">
+                    <div class="container">
+                        <div class="step">
+                            <div class="question-title">Select Your Age Range</div>
+                            <div class="question-options">
+                                <a href="#" class="option age-option" data-age="50"><span>50-75</span></a>
+                                <a href="#" class="option age-option" data-age="76"><span>76-80</span></a>
+                                <a href="#" class="option age-option" data-age="81"><span>81+</span></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="footer initial-flow">
+                    <div class="container">
+                        <div class="menu">
+                            <a href="./privacy.html">Privacy</a>
+                            <span class="separator"></span>
+                            <a href="./terms.html">Terms</a>
+                        </div>
+                        <div class="copyright">
+                            Copyright © 2026 - All rights reserved.
+                        </div>
+                    </div>
+                </div>
+            <div id="congratulation-section" class="congratulation" style="display:none;">
+                <div class="title">Congratulations!</div>
+
+                <p class="text-bold" style="margin-top:20px;">Make a quick <span class="text-style-italic text-selected-yellow">call</span> to claim your $1/day <span class="text-color-red">BURIAL BENEFIT!</span></p>
+
+                <p class="text-style-italic font-size-24" style="margin-top:20px;">Hurry! Secure this benefit <span class="text-color-red">before time runs out...</span></p>
+
+                <p class="timer text-color-red" style="margin-top:20px;">03:00</p>
+
+                <p class="text-bold font-size-24" style="margin-top:20px;">Tap below to get your burial benefit 👇</p>
+
+                <a id="PrimaryNumber" href="tel:+18778947736" class="cta-btn lead" style="margin-top:30px;">
+                    <span>Call Now (877) 894-7736</span>
+                </a>
             </div>
         </div>
 
-      
+        <script>
+            (function () {
+                var initialFlowSections = document.querySelectorAll(".initial-flow");
+                var congratulationSection = document.getElementById("congratulation-section");
+                var ageOptions = document.querySelectorAll(".age-option");
+                var doneClass = "done";
+                var timerStarted = false;
+                var startTimeMinutes = 3;
+
+                function startTimer() {
+                    if (timerStarted) {
+                        return;
+                    }
+
+                    timerStarted = true;
+                    var timer = 60 * startTimeMinutes;
+                    var display = document.querySelectorAll(".timer");
+
+                    var intervalLoop = setInterval(function () {
+                        var minutes = parseInt(timer / 60, 10);
+                        var seconds = parseInt(timer % 60, 10);
+                        minutes = minutes < 10 ? "0" + minutes : String(minutes);
+                        seconds = seconds < 10 ? "0" + seconds : String(seconds);
+
+                        for (var i = 0; i < display.length; i++) {
+                            display[i].textContent = minutes + ":" + seconds;
+                        }
+
+                        if (--timer < 0) {
+                            for (var j = 0; j < display.length; j++) {
+                                display[j].classList.add(doneClass);
+                                display[j].textContent = "DONE";
+                            }
+                            clearInterval(intervalLoop);
+                        }
+                    }, 1000);
+                }
+
+                function showCongratulation(age) {
+                    var url = new URL(window.location.href);
+                    url.searchParams.set("Age", age);
+                    window.history.replaceState({}, "", url.toString());
+
+                    for (var k = 0; k < initialFlowSections.length; k++) {
+                        initialFlowSections[k].style.display = "none";
+                    }
+                    congratulationSection.style.display = "block";
+                    startTimer();
+                }
+
+                for (var i = 0; i < ageOptions.length; i++) {
+                    ageOptions[i].addEventListener("click", function (ev) {
+                        ev.preventDefault();
+                        var age = this.getAttribute("data-age");
+                        showCongratulation(age);
+                    });
+                }
+            })();
+        </script>
     </body>
 </html>
