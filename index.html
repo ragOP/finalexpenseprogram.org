@@ -11,10 +11,10 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="css2" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
         <!-- Style -->
-        <link href="./css/style.css" rel="stylesheet" media="all">
+        <link href="./style.css" rel="stylesheet" media="all">
 
         <!-- Scripts -->
         <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
@@ -23,7 +23,7 @@
         <div id="app" class="app">
             <div class="header">
                 <div class="container">
-                    <img class="banner" src="./img/banner.jpg" />
+                    <img class="banner" src="./banner.jpg" />
                 </div>
             </div>
 
@@ -68,41 +68,6 @@
             </div>
         </div>
 
-        <script>
-            (function(){
-                let oParams = new URLSearchParams(window.location.search);
-                let sParams = oParams.toString();
-
-                if ((sParams != null) && (typeof sParams == "string") && ((sParams = sParams.trim()) != "")){
-                    $(".add-url-params").each(function(){
-                        let oElement = $(this);
-                        let sHref = oElement.attr("href");
-                        if ((sHref != null) && (typeof sHref == "string") && ((sHref = sHref.trim()) != "")){
-                            oElement.attr("href", sHref + (sHref.includes("?") ? "&" : "?") + sParams);
-                        }
-                    });
-                }
-
-                $(".add-value-on-click").each(function(){
-                    let oField = $(this);
-                    let sHref = oField.attr("href");
-                    let sFieldName = oField.data("field-name");
-                    let sFieldValue = oField.data("field-value");
-
-                    if (
-                       (sHref != null) && (typeof sHref == "string") && ((sHref = sHref.trim()) != "") && 
-                       (sFieldName != null) && (typeof sFieldName == "string") && ((sFieldName = sFieldName.trim()) != "") && 
-                       (sFieldValue != null) && (((typeof sFieldValue == "string") && ((sFieldValue = sFieldValue.trim()) != "")) || (typeof sFieldValue == "number"))
-                    ) {
-                        oField.attr("href", "#");
-
-                        oField.on("click", function(ev){
-                            window.location.replace(sHref + (sHref.includes("?") ? "&" : "?") + sFieldName + "=" + sFieldValue);
-                            ev.preventDefault();
-                        });
-                    }
-                });
-            })();
-        </script>
+      
     </body>
 </html>
